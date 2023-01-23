@@ -1,0 +1,34 @@
+{
+    "name": "esit/ctoadapter",
+    "description": "Es handelt sich um eine Erweiterung für das Open Source CMS Contao",
+    "license": "proprietary",
+    "type": "contao-bundle",
+    "authors": [
+        {
+            "name": "Patrick Froch",
+            "email": "info@easySolutionsIT.de",
+            "homepage": "http://easySolutionsIT.de",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "info@easySolutionsIT.de"
+    },
+    "require": {
+        "php": "^8.1",
+        "contao/core-bundle": "^4.13"
+    },
+    "require-dev": {
+        "contao/test-case": "^4.13",
+        "phpunit/phpunit": "^9.5",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Esit\\Ctoadapter\\": ""
+        }
+    },
+    "extra": {
+        "contao-manager-plugin": "Esit\\Ctoadapter\\Classes\\Contao\\Manager\\Plugin"
+    }
+}
