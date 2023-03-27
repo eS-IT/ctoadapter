@@ -29,4 +29,3 @@ services:
     Esit\Ctoadapter\Classes\Services\Adapter\System:
 
     Esit\Ctoadapter\Classes\Services\Adapter\Validator:
-

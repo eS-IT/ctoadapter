@@ -13,3 +13,7 @@
 autoload*
 vendor/
 **/**/*.example
+Resources/contao/
+Resources/contao/*
+Classes/Contao/Test/
+Classes/Contao/Test/*

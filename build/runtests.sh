@@ -10,8 +10,6 @@
 # =============================================================================
 #
 
-BUILD_FULLPACKAGE="false";
-
 
 ## Ausgabe
 function myecho() {
@@ -86,56 +84,6 @@ configFolder='./build'
 toolFolder="${configFolder}/tools"
 classesFolder='./Classes'
 
-
-## validate compser.json
-if [ -f ${toolFolder}/composer ]
-then
-    myecho "Prüfe comopser.json (verwende ${toolFolder}/composer)"
-
-    if [ "${VERBOSE}" == "TRUE" ]
-    then
-        COMPOSER_MEMORY_LIMIT=-1 ${toolFolder}/composer diagnose
-        tmperr=$?
-    else
-        COMPOSER_MEMORY_LIMIT=-1 ${toolFolder}/composer diagnose &>/dev/null
-        tmperr=$?
-    fi
-
-    if [ ${tmperr} -gt 1 ]
-    then
-        error=${tmperr}
-        myerror "Es ist ein Fehler ausgetreten [${tmperr}]"
-    else
-       myshortecho "Prüfung des Schemas in der Datei composer.json erfolgreich"
-    fi
-else
-    myinfo "Prüfen des Schemas der composer.json ausgelassen. composer.phar nicht vorhanden!"
-fi
-
-
-## phpcbf
-if [ -f ${toolFolder}/php-cs-fixer ]
-then
-    myecho "Führe automatische Korrektur der Code-Standards mit PhpCbf durch"
-    if [ "${VERBOSE}" == "TRUE" ]
-    then
-        ${toolFolder}/phpcbf Classes
-        tmperr=$?
-    else
-        ${toolFolder}/phpcbf -q Classes
-        tmperr=$?
-    fi
-
-    if [ ${tmperr} -ne 0 ]
-    then
-       error=${tmperr}
-       myerror "Es ist ein Fehler ausgetreten [${tmperr}]"
-    else
-       myshortecho "Automatische Korrektur der Code-Standards mit PhpCbf erfolgreich"
-    fi
-else
-   myinfo "Automatische Korrektur der Code-Standards ausgelassen. PhpCbf vorhanden!"
-fi
 
 
 ## phpcs
@@ -221,13 +169,6 @@ then
     echo
     exit 127
 else
-    if [ -f /home/pfroch/bin/buildfullpackage ] && [ "$BUILD_FULLPACKAGE" != "false" ]
-    then
-        # Installationsarchiv erstellen
-        echo "Erstelle installationsarchiv"
-        /home/pfroch/bin/buildfullpackage
-    fi
-
     myecho ">>>>>>>>>>>>>>>>>>>>>>> Es sind keine Fehler aufgetreten <<<<<<<<<<<<<<<<<<<<<<<"
     echo
     exit 0
