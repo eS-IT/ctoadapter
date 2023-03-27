@@ -14,6 +14,11 @@ genutzt und somit in Tests besser verwendet werden.
 __e@sy Solutions IT:__ Patrick Froch <info@easySolutionsIT.de>
 
 
+## Lizenz
+
+Die Software wird unter LGPL veröffentlicht. Details sind in der Datei `LICENSE` zu finden.
+
+
 ## Voraussetzungen
 
 - php: ~8.0
