@@ -21,7 +21,6 @@ namespace Esit\Test\Adapter {
 namespace Esit\Ctoadapter\Tests\Services\Adapter {
 
     use Esit\Ctoadapter\Classes\Exceptions\ClassNotExistsException;
-    use Esit\Ctoadapter\Classes\Exceptions\MethodNotExistsException;
     use Esit\Test\Adapter\Config;
     use Esit\Test\Adapter\NoContaoClass;
     use PHPUnit\Framework\TestCase;
@@ -33,7 +32,7 @@ namespace Esit\Ctoadapter\Tests\Services\Adapter {
         public function test__callThorwExceptionIfClassIsNotFound(): void
         {
             $this->expectException(ClassNotExistsException::class);
-            $this->expectExceptionMessage("Class 'Contao\NoContaoClass' not found");
+            $this->expectExceptionMessage("Method 'get' in class 'Contao\NoContaoClass' is not calable");
             $adapter = new NoContaoClass();
             $adapter->get();
         }
@@ -41,8 +40,8 @@ namespace Esit\Ctoadapter\Tests\Services\Adapter {
 
         public function test__callThorwExceptionIfMethodeIsNotFound(): void
         {
-            $this->expectException(MethodNotExistsException::class);
-            $this->expectExceptionMessage("Class 'Contao\Config' has no method 'noMethod'");
+            $this->expectException(ClassNotExistsException::class);
+            $this->expectExceptionMessage("Method 'noMethod' in class 'Contao\Config' is not calable");
             $adapter = new Config();
             $adapter->noMethod();
         }

@@ -22,8 +22,6 @@ use Esit\Ctoadapter\EsitCtoadapterBundle;
 
 class Plugin implements BundlePluginInterface
 {
-
-
     /**
      * @param ParserInterface $parser
      * @return array|ConfigInterface[]

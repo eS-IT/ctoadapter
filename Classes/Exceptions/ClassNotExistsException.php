@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package     Ctoadapter
  * @since       27.03.2023 - 15:10
@@ -7,7 +8,9 @@
  * @copyright   e@sy Solutions IT 2023
  * @license     EULA
  */
+
 declare(strict_types=1);
+
 namespace Esit\Ctoadapter\Classes\Exceptions;
 
 class ClassNotExistsException extends \RuntimeException implements Exception

@@ -18,28 +18,23 @@ use Esit\Ctoadapter\Classes\Exceptions\MethodNotExistsException;
 
 abstract class Adapter
 {
-
-
     /**
      * Ruft eine statische Methode auf.
-     * @param $name
-     * @param $arguments
+     * @param string  $method
+     * @param mixed[] $arguments
      * @return mixed
      */
-    public function __call($method, $arguments): mixed
+    public function __call(string $method, array $arguments): mixed
     {
         $class = static::class;
         $class = \substr_count($class, '\\') >= 1 ? \substr($class, strrpos($class, '\\') + 1) : $class;
         $class = "Contao\\$class";
+        $callbale   = [$class, $method];
 
-        if (!\class_exists($class)) {
-            throw new ClassNotExistsException("Class '$class' not found");
+        if (!\is_callable($callbale)) {
+            throw new ClassNotExistsException("Method '$method' in class '$class' is not calable");
         }
 
-        if (!\method_exists($class, $method)) {
-            throw new MethodNotExistsException("Class '$class' has no method '$method'");
-        }
-
-        return \call_user_func_array([$class, $method], $arguments);
+        return \call_user_func_array($callbale, $arguments);
     }
 }
