@@ -7,7 +7,7 @@ test_cto4.9_php8.0:
     stage: test_cto4.9
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto4.9_php8.0:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto4.9_php8.0:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
@@ -23,7 +23,7 @@ test_cto4.9_php8.1:
     stage: test_cto4.9
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto4.9_php8.1:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto4.9_php8.1:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
@@ -39,7 +39,7 @@ test_cto4.9_php8.2:
     stage: test_cto4.9
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto4.9_php8.2:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto4.9_php8.2:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
@@ -55,7 +55,7 @@ test_cto4.13_php8.0:
     stage: test_cto4.13
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto4.13_php8.0:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto4.13_php8.0:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
@@ -71,7 +71,7 @@ test_cto4.13_php8.1:
     stage: test_cto4.13
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto4.13_php8.1:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto4.13_php8.1:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
@@ -87,7 +87,7 @@ test_cto4.13_php8.2:
     stage: test_cto4.13
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto4.13_php8.2:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto4.13_php8.2:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
@@ -103,7 +103,7 @@ test_cto5.1_php8.1:
     stage: test_cto5.1
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto5.1_php8.1:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto5.1_php8.1:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
@@ -119,7 +119,7 @@ test_cto5.1_php8.2:
     stage: test_cto5.1
     except:
         - tags
-    image: esit-projekt.de:5000/testsuite_cto5.1_php8.2:1.0.0
+    image: projekt.easysolutionsit.de:5000/testsuite_cto5.1_php8.2:1.0.0
     variables:
         GIT_STRATEGY: none
         PROJECT_NAME: ctoadapter
